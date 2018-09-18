@@ -1,0 +1,130 @@
+/* Imports external sheets and fonts */
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+/* Maze space setup */
+#level {
+	color: #333;
+	text-align: center;
+}
+#level.success {
+	color: #09ad7e;
+}
+#level.error {
+	color: #900;
+}
+div.row {
+	display: inline-block;
+	clear: both;
+}
+div.col {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	font-weight: bold;
+	float: left;
+	text-align: center;
+	position: relative;
+	font-size: 14pt;
+}
+div.col i.fa.iconStatic {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+/* Level Indicators */ 
+.bgIcon {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	color: #09ad7e;
+}
+/* Notifications */
+h1.notify {
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	top: 40%;
+	font-family: tahoma;
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px 0px 20px 0px;
+    text-shadow: 0px 0px 6px #FFF;
+	text-transform: uppercase;
+	font-size: 24pt;
+}
+/* Timer */
+#timer {
+	width: 100px;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 14pt;
+	float: left;
+	text-align: left;
+}
+/* Controls */
+#controls {
+	margin: 20px 0px 20px 0px;
+	padding: 20px 0px 20px 0px;
+	border-top: 1px solid #CACACA;
+	border-bottom: 1px solid #CACACA;
+	text-align: center;
+}
+.btnControl {
+	padding: 6px;
+	border-radius: 4px;
+	border: 2px solid #FFF;
+	background-color: #000;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: tahoma;
+	text-transform: uppercase;
+	font-size: 9pt;
+	text-align: center;
+	box-shadow: 0px 0px 4px #CACACA;
+}
+.btnControl.active {
+	background-color: #20a6ff;
+}
+/* Player styles */
+/* Directions */
+.player {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14pt;
+	color: #09ad7e;
+	border: 4px solid #ffd46d;
+	border-width: 0px;
+	border-radius: 10px;
+}
+.faceUp {
+	border-top-width: 4px;
+}
+.faceDown {
+	border-bottom-width: 4px;
+}
+.faceRight {
+	border-right-width: 4px;
+}
+.faceLeft {
+	border-left-width: 4px;
+}
+/* AI Bots */
+.bot {
+	color: #900;
+}
+#bot_0 {
+	color: #900;
+}
+#bot_1 {
+	color: #ffd46d;
+}
+#bot_2 {
+	color: #0083de;
+}
+#bot_3 {
+	color: #dd007d;
+}
+/* Utility class */
+.clear {
+	clear: both;
+}

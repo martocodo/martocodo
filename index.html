@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<title>Maze Game</title>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/screen.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/LevelController.js"></script>
+<script type="text/javascript" src="js/PlayerController.js"></script>
+<script type="text/javascript" src="js/AIController.js"></script>
+<script type="text/javascript" src="js/TimerController.js"></script>
+</head>
+<body>
+	<div id="controls">
+		<!--<div id="timer"></div>-->
+		<a class="btnControl" href="#" data-control-type="push">Super Strength</a>
+		<a class="btnControl" href="#" data-control-type="ghost">Ghost</a>
+	</div>
+	<div id="level"></div>
+	<!-- Initiate all javascript controllers and begin game setup -->
+	<script type="text/javascript">
+		var levelController;
+		var playerController;
+		var config = {
+			wrapperEl: "#level",
+			timerEl: "#timer",
+			randomPlayerStart: false,
+			playerStart: {row: 2, col: 2},
+			controls: {
+				push: false,
+				ghost: false
+			},
+			// View data
+			views: {
+				wall: '<i class="fa iconStatic fa-square"></i>',
+				exit: '<i class="bgIcon fa fa-sign-out"></i>',
+				player: {
+					default: '<i class="fa fa-user-o"></i>',
+					push: '<i class="fa fa-slideshare"></i>',
+					ghost: '<i class="fa fa-snapchat-ghost"></i>',
+					gameover: '<i class="fa fa-close"></i>',
+				},
+				ai: {
+					robot: '<i class="fa iconStatic fa-android"></i>'
+				}
+			},
+			template: {
+				file: 'levels/test.txt',
+				size: {
+					width: 37
+				},
+				controls: {
+					push: false
+				}
+			},
+			ai: {
+				paths: [
+					[[20,6],[20,5],[20,4],[21,4],[22,4],[22,5],[22,6],[22,7],[22,8],[22,9],[22,10],[22,11],[22,12]],
+					[[22,36],[21,36],[20,36],[20,35],[20,34],[20,33],[20,32],[19,32],[18,32],[19,32],[20,32],[20,31],[20,30],[19,30],[18,30],[18,29],[18,28],[18,27],[18,26],[17,26],[16,26],[17,26],[18,26],[18,25],[18,24],[19,24],[20,24]]
+				],
+				speed: [1000,200]
+			}
+		};
+		/* DOM ready setup */
+		$(document).ready(function() {
+			/* timerController = new TimerController(config); // WIP */
+			playerController = new PlayerController(config);
+			levelController = new LevelController(config);
+			aiController = new AIController(config);
+		});
+	</script>
+</body>
+</html>
